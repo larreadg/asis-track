@@ -1,0 +1,24 @@
+<section class="grid">
+    <section class="col-12">
+        <p-breadcrumb class="max-w-full" [model]="bItems"></p-breadcrumb>
+    </section>
+    <section class="col-12">
+        <p-table [value]="cursos">
+            <ng-template pTemplate="body" let-curso>
+                <tr>
+                    <td>{{curso.nombre}}</td>
+                    <td>
+                        <section class="flex justify-content-end gap-1">
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-warning" [routerLink]="['/cursos/edit', curso.id]"></button>
+                            <button pButton pRipple icon="pi pi-users" class="p-button-rounded p-button-text p-button-success" [routerLink]="['/cursos/edit', curso.id]"></button>
+                        </section>    
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </section>
+</section>
+
+<section class="add">
+    <button pButton pRipple icon="pi pi-plus" class="p-button-rounded p-button-primary" routerLink="/cursos/add"></button>
+</section>

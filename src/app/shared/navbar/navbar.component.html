@@ -1,0 +1,18 @@
+<nav class="nav shadow-2">
+    <button (click)="openSidebar = !openSidebar" pButton pRipple icon="pi pi-bars" class="p-button-rounded p-button-text"></button>
+    <img src="assets/img/at.png" alt="AT" class="logo">
+</nav>
+
+<p-sidebar [(visible)]="openSidebar" position="left">
+    <h3>AsisTrack</h3>
+    <section class="sidebar_container">
+        <section class="sidebar_item" (click)="closeSidebar('/home')">
+            <i class="pi pi-home"></i>
+            <p>Inicio</p>
+        </section>
+        <section class="sidebar_item" (click)="closeSidebar('/cursos')">
+            <i class="pi pi-pencil"></i>
+            <p>Cursos</p>
+        </section>
+    </section>
+</p-sidebar>

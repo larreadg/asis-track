@@ -1,0 +1,11 @@
+<form class="grid" [formGroup]="form" (submit)="guardar()">
+    <section class="col-12">
+        <p-breadcrumb [model]="bItems"></p-breadcrumb>
+    </section>
+    <div class="col-12">
+        <input formControlName="nombre" type="text" class="inputfield w-full" pInputText>
+    </div>
+    <div class="col-12">
+        <button pButton pRipple icon="pi pi-plus" label="Guardar" type="submit" [disabled]="form.invalid" class="w-full"></button>
+    </div>
+</form>

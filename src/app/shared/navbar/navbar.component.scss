@@ -1,0 +1,37 @@
+.nav {
+    height: 70px;
+    background-color: var(--surface-card);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    .logo {
+        width: 32px;
+        height: auto;
+    }
+}
+
+.sidebar_container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .sidebar_item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid var(--surface-border);
+        border-radius: 0.2rem;
+        padding: 1rem;
+    
+        p {
+            margin: 0;
+        }
+
+        i {
+            color: var(--primary-color);
+        }
+    }
+}
