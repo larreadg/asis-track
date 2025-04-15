@@ -11,6 +11,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CursosListComponent } from './cursos/cursos-list/cursos-list.component';
 import { CursosAddComponent } from './cursos/cursos-add/cursos-add.component';
 import { CursosEditComponent } from './cursos/cursos-edit/cursos-edit.component'
+import { EstudiantesListComponent } from './estudiantes/estudiantes-list/estudiantes-list.component';
+import { EstudiantesAddComponent } from './estudiantes/estudiantes-add/estudiantes-add.component';
+import { EstudiantesEditComponent } from './estudiantes/estudiantes-edit/estudiantes-edit.component';
 
 // Primeng
 import { ButtonModule } from 'primeng/button'
@@ -20,6 +23,8 @@ import { CardModule } from 'primeng/card'
 import { TableModule } from 'primeng/table'
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { InputTextModule } from 'primeng/inputtext';
+import { BadgeModule } from 'primeng/badge';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 
 
 @NgModule({
@@ -29,7 +34,11 @@ import { InputTextModule } from 'primeng/inputtext';
     NavbarComponent,
     CursosListComponent,
     CursosAddComponent,
-    CursosEditComponent
+    CursosEditComponent,
+    EstudiantesListComponent,
+    EstudiantesAddComponent,
+    EstudiantesEditComponent,
+    SplashScreenComponent
   ],
   imports: [
     // Primeng
@@ -40,6 +49,7 @@ import { InputTextModule } from 'primeng/inputtext';
     TableModule,
     BreadcrumbModule,
     InputTextModule,
+    BadgeModule,
 
     BrowserModule,
     BrowserAnimationsModule,

@@ -13,8 +13,8 @@ export class PersonasService {
   }
 
   // R: Obtener todas las personas
-  getPersonas(): Promise<Persona[]> {
-    return this.dbService.personas.toArray();
+  getPersonas(cursoId?: number): Promise<Persona[]> {
+    return cursoId ? this.dbService.personas.where('curso_id').equals(cursoId).toArray() : this.dbService.personas.toArray();
   }
 
   // U: Actualizar una persona

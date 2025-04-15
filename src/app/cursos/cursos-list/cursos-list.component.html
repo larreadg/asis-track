@@ -3,16 +3,22 @@
         <p-breadcrumb class="max-w-full" [model]="bItems"></p-breadcrumb>
     </section>
     <section class="col-12">
-        <p-table [value]="cursos">
+        <p-table [value]="cursos" styleClass="p-datatable-striped">
             <ng-template pTemplate="body" let-curso>
                 <tr>
                     <td>{{curso.nombre}}</td>
                     <td>
                         <section class="flex justify-content-end gap-1">
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-warning" [routerLink]="['/cursos/edit', curso.id]"></button>
-                            <button pButton pRipple icon="pi pi-users" class="p-button-rounded p-button-text p-button-success" [routerLink]="['/cursos/edit', curso.id]"></button>
+                            <button pButton pRipple icon="pi pi-users" class="p-button-rounded p-button-text p-button-success" [routerLink]="['/cursos', curso.id, 'estudiantes']"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger" (click)="eliminarCurso(curso.id)"></button>
                         </section>    
                     </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="2">Sin cursos</td>
                 </tr>
             </ng-template>
         </p-table>

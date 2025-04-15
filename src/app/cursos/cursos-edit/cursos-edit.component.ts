@@ -13,7 +13,7 @@ import { CursosService } from 'src/app/services/cursos.service';
 export class CursosEditComponent {
 
   form : FormGroup
-  bItems: MenuItem[] = [{ icon: 'pi pi-home', routerLink: '/home' }, { label: 'Cursos', routerLink: '/cursos' }]
+  bItems: MenuItem[] = [{ icon: 'pi pi-home', routerLink: '/home' }, { label: '..', routerLink: '/cursos' }]
 
   constructor(private formBuilder: FormBuilder, private cursosService: CursosService, private router: Router, private activatedRoute: ActivatedRoute) { 
 

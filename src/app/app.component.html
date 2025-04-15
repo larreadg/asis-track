@@ -1,4 +1,7 @@
-<app-navbar></app-navbar>
-<main class="container">
-    <router-outlet></router-outlet>
-</main>
+<app-splash-screen *ngIf="showSplash"></app-splash-screen>
+<ng-container *ngIf="!showSplash">
+    <app-navbar></app-navbar>
+    <main class="container">
+        <router-outlet></router-outlet>
+    </main>
+</ng-container>

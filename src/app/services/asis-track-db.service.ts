@@ -11,7 +11,6 @@ export interface Persona {
   nombres: string;
   apellidos: string;
   documento: string;
-  fecha_nacimiento: string;
   curso_id: number;
 }
 

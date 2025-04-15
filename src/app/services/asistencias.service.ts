@@ -23,8 +23,8 @@ export class AsistenciasService {
   }
 
   // D: Eliminar una asistencia
-  deleteAsistencia(id: number): Promise<void> {
-    return this.dbService.asistencias.delete(id);
+  deleteAsistenciaByPersonaId(personaId: number): Promise<number> {
+    return this.dbService.asistencias.where('persona_id').equals(personaId).delete();
   }
 
   // Buscar asistencias por un campo específico

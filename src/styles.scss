@@ -5,3 +5,51 @@ body {
     background-color: var(--surface-ground);
     font-family: 'Roboto', sans-serif;
 }
+
+.p-breadcrumb {
+    /* Para asegurarnos de que todo el breadcrumb tenga un ancho */
+    max-width: 100%; /* Ajustá según tu diseño */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  
+    /* Con flex, necesitás display:flex en este contenedor
+       o en un contenedor interno; depende de la estructura que tengas. */
+    display: flex;
+    align-items: center;
+  }
+  
+  .p-breadcrumb ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  
+    /* Evita el salto de línea */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  
+    /* Otras propiedades si querés seguir con flex */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Si querés que cada li ocupe un espacio máximo y colapse con ellipsis individual:
+     - Debés aplicarlo a cada li o a un contenedor interno de la etiqueta <a> o <span>.
+  */
+  .p-breadcrumb ul li {
+    /* Ejemplo: cada “fragmento” del breadcrumb tiene máx. 120px */
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    /* Opcional: separador */
+    margin-right: 8px;
+  }
+  
+  /* Asegurate de usar display:inline-block o block en 'li', 
+     para que el ancho / ellipsis surta efecto */
+  .p-breadcrumb ul li {
+    display: inline-block; /* o block, según tu preferencia */
+  }
+  

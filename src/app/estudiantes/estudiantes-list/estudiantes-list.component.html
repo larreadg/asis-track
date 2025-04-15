@@ -1,0 +1,38 @@
+<section class="grid">
+    <section class="col-12">
+        <p-breadcrumb class="max-w-full" [model]="bItems"></p-breadcrumb>
+    </section>
+    <section class="col-12">
+        <section class="flex gap-2 align-items-center">
+            <i class="pi pi-star" [style]="{ color: 'var(--primary-color)' }"></i>
+            <p>{{cursoNombre}}</p>
+        </section>
+    </section>
+    <section class="col-12">
+        <p-table [value]="estudiantes" styleClass="p-datatable-striped">
+            <ng-template pTemplate="body" let-estudiante>
+                <tr>
+                    <td>
+                        <p class="m-0 font-bold">{{estudiante.documento}}</p>
+                        <p class="m-0">{{estudiante.nombres}} {{estudiante.apellidos}}</p>
+                    </td>
+                    <td>
+                        <section class="flex justify-content-end gap-1">
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-warning" routerLink="/cursos/{{cursoId}}/estudiantes/edit/{{estudiante.id}}"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger" (click)="eliminarEstudiante(estudiante.id)"></button>
+                        </section>    
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="2">Sin estudiantes</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </section>
+</section>
+
+<section class="add">
+    <button pButton pRipple icon="pi pi-plus" class="p-button-rounded p-button-primary" routerLink="/cursos/{{cursoId}}/estudiantes/add"></button>
+</section>
