@@ -7,6 +7,9 @@ import { CursosEditComponent } from './cursos/cursos-edit/cursos-edit.component'
 import { EstudiantesListComponent } from './estudiantes/estudiantes-list/estudiantes-list.component';
 import { EstudiantesAddComponent } from './estudiantes/estudiantes-add/estudiantes-add.component';
 import { EstudiantesEditComponent } from './estudiantes/estudiantes-edit/estudiantes-edit.component';
+import { MateriasListComponent } from './materias/materias-list/materias-list.component';
+import { MateriasAddComponent } from './materias/materias-add/materias-add.component';
+import { MateriasEditComponent } from './materias/materias-edit/materias-edit.component';
 
 const routes: Routes = [
   {
@@ -41,6 +44,18 @@ const routes: Routes = [
   {
     path: 'cursos/:id/estudiantes/edit/:estudianteId',
     component: EstudiantesEditComponent
+  },
+  {
+    path: 'cursos/:id/materias',
+    component: MateriasListComponent
+  },
+  {
+    path: 'cursos/:id/materias/add',
+    component: MateriasAddComponent
+  },
+  {
+    path: 'cursos/:id/materias/edit/:materiaId',
+    component: MateriasEditComponent
   },
 ];
 

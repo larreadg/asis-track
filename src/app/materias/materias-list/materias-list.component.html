@@ -1,0 +1,40 @@
+<section class="grid">
+    <section class="col-12">
+        <p-breadcrumb class="max-w-full" [model]="bItems"></p-breadcrumb>
+    </section>
+    <section class="col-12">
+        <section class="flex gap-2 align-items-center">
+            <i class="pi pi-star" [style]="{ color: 'var(--primary-color)' }"></i>
+            <p>{{cursoNombre}}</p>
+        </section>
+    </section>
+    <section class="col-12">
+        <ng-container *ngIf="materias.length > 0">
+            <p-table [value]="materias" styleClass="p-datatable-striped">
+                <ng-template pTemplate="body" let-materia>
+                    <tr>
+                        <td>
+                            <p class="m-0">{{materia.nombre}}</p>
+                        </td>
+                        <td>
+                            <section class="flex justify-content-end gap-1">
+                                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-warning" routerLink="/cursos/{{cursoId}}/materias/edit/{{materia.id}}"></button>
+                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger" (click)="eliminarMateria(materia.id)"></button>
+                            </section>    
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </ng-container>
+        <ng-container *ngIf="materias.length === 0">
+            <section class="flex align-items-center flex-column">
+                <img src="assets/img/donut.svg" alt="Taken" class="donut">
+                <p>Sin materias</p>
+            </section>
+        </ng-container>
+    </section>
+</section>
+
+<section class="add">
+    <button pButton pRipple icon="pi pi-plus" class="p-button-rounded p-button-primary p-button-lg" routerLink="/cursos/{{cursoId}}/materias/add"></button>
+</section>

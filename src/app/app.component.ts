@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
     // Oculta el splash después de 3 segundos (ajusta según tus necesidades)
     setTimeout(() => {
       this.showSplash = false;
-    }, 3000);
+    }, 2000);
   }
 }

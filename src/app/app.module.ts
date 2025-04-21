@@ -25,6 +25,9 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { InputTextModule } from 'primeng/inputtext';
 import { BadgeModule } from 'primeng/badge';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { MateriasListComponent } from './materias/materias-list/materias-list.component';
+import { MateriasAddComponent } from './materias/materias-add/materias-add.component';
+import { MateriasEditComponent } from './materias/materias-edit/materias-edit.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
     EstudiantesListComponent,
     EstudiantesAddComponent,
     EstudiantesEditComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    MateriasListComponent,
+    MateriasAddComponent,
+    MateriasEditComponent
   ],
   imports: [
     // Primeng

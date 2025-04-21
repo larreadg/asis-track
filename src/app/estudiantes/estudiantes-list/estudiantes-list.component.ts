@@ -5,7 +5,7 @@ import { Curso, Persona } from 'src/app/services/asis-track-db.service';
 import { AsistenciasService } from 'src/app/services/asistencias.service';
 import { CursosService } from 'src/app/services/cursos.service';
 import { PersonasService } from 'src/app/services/personas.service';
-
+import readXlsxFile from 'read-excel-file'
 
 @Component({
   selector: 'app-estudiantes-list',
@@ -53,5 +53,38 @@ export class EstudiantesListComponent {
       this.getEstudiantes(this.cursoId, false)
     }
   }
-  
+
+  abrirExplorador = () => {
+    document.getElementById('importarEstudiantes')?.click()
+  }
+ 
+  importarEstudiantes = async(files: File[]) => {
+
+    let rows: any[] = await new Promise((resolve, reject) => {
+      readXlsxFile(files[0]).then((rows) => {
+        resolve(rows)
+      }).catch(err => reject(err))  
+    })
+
+    rows.shift()
+
+    for(let p of rows) {
+      let persona: Persona = {
+        documento: String(p[0]),
+        nombres: String(p[1]),
+        apellidos: String(p[2]),
+        curso_id: this.cursoId
+      }
+      await this.guardar(persona)
+    }
+    this.getEstudiantes(this.cursoId, false)
+  }
+
+  guardar = async(persona: Persona) => {
+    let seach: Persona[] = await this.personasService.searchPersonasByField('documento', persona.documento)
+    if(seach.length > 0) {
+      return
+    }
+    await this.personasService.addPersona(persona)
+  }
 }

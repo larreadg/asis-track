@@ -26,6 +26,11 @@ export class AsistenciasService {
   deleteAsistenciaByPersonaId(personaId: number): Promise<number> {
     return this.dbService.asistencias.where('persona_id').equals(personaId).delete();
   }
+  
+  // D: Eliminar una asistencia
+  deleteAsistenciaByMateriaId(materiaId: number): Promise<number> {
+    return this.dbService.asistencias.where('materia_id').equals(materiaId).delete();
+  }
 
   // Buscar asistencias por un campo específico
   searchAsistenciasByField(field: keyof Asistencia, value: any): Promise<Asistencia[]> {
